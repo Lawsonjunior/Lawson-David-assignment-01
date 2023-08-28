@@ -16,11 +16,17 @@ const assignment = {};
  */
 function sumOfNumbersTo(destination) {
     let sum = 0;
-    return sum
+  for (let i = 1; i <= destination; i++) {
+    sum += i;
+  }
+    return sum;
 }
 
+const destination = 20;
+const result = sumOfNumbersTo(destination);
+console.log('The sum of number between 1 and $(destination) is: ${result}');
 
-// assignment.sumOfNumbersTo = sumOfNumbersTo;
+assignment.sumOfNumbersTo = sumOfNumbersTo;
 
 /**
  * Challenge - 2
@@ -39,17 +45,33 @@ function countEvenNumbersWithin(destination) {
     let count = 0;
     let arrayOfEvenNumbers = [];
 
-    return {
+    for (let i = 1; i <= destination; i++) {
+      if (i % 2 === 0){
+        arrayOfEvenNumbers.push(i);
+        sum += i;
+        count++;
+      }
+    }
+
+    const result = {
         // property value shorthand
         // when the property name and the value name are the same
         // you can just write the property name in your object
-        count,
-        sum,
-        arrayOfEvenNumbers
-    };
+       count,
+       sum,
+       arrayOfEvenNumbers,
+    };   
+  
+  return result;
 }
 
-// assignment.countEvenNumbersWithin = countEvenNumbersWithin;
+const stats = countEvenNumbersWithin(destination);
+
+console.log("Count of even numbers:",stats.count);
+console.log("Sum of even numbers:",stats.sum);
+console.log("Array of even numbers:", stats.ArrayOfevenNumbers);
+
+assignment.countEvenNumbersWithin = countEvenNumbersWithin;
 
 /**
  * Challenge - 3
